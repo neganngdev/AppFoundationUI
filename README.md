@@ -193,6 +193,32 @@ OnboardingContainerView(pages: pages) {
 }
 ```
 
+### Paywall Templates
+
+```swift
+let plans = [
+    SubscriptionPlan(id: "pro_monthly",
+                     name: "Pro Monthly",
+                     price: "$4.99",
+                     period: "/month",
+                     badge: "Most Popular",
+                     trialDescription: "7-day free trial",
+                     features: [PlanFeature("Unlimited projects"), PlanFeature("Priority support")]),
+    SubscriptionPlan(id: "pro_yearly",
+                     name: "Pro Yearly",
+                     price: "$39.99",
+                     period: "/year",
+                     badge: "Best Value",
+                     features: [PlanFeature("Everything in Pro"), PlanFeature("2 months free")])
+]
+
+PaywallTemplateVertical(plans: plans,
+                        onPurchaseSuccess: { plan in
+                            // purchased
+                        },
+                        onDismiss: {})
+```
+
 ## Structure
 
 ```
