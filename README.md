@@ -134,6 +134,52 @@ ErrorStateView(message: "Unable to refresh data") {
 }
 ```
 
+### Form Inputs
+
+```swift
+AppTextField(
+    text: $email,
+    placeholder: "Email",
+    icon: "envelope",
+    validation: .email
+)
+
+AppTextEditor(
+    text: $bio,
+    placeholder: "Tell us about yourself",
+    characterLimit: 500
+)
+
+AppToggle(
+    isOn: $notifications,
+    title: "Push Notifications",
+    description: "Receive updates"
+)
+
+AppPicker(
+    title: "City",
+    selection: $city,
+    items: cities,
+    style: .sheet,
+    showsSearch: true
+)
+```
+
+### Validation
+
+```swift
+let validator = FormValidator()
+let result = validator.validate("user@example.com", using: .email)
+
+// Custom rule
+struct OnlySwift: ValidationRule {
+    func validate(_ value: String) -> ValidationResult {
+        value.contains("swift") ? .success : .failure(message: "Must include swift")
+    }
+}
+let customResult = validator.validate("swift rocks", using: .custom(OnlySwift()))
+```
+
 ## Structure
 
 ```
