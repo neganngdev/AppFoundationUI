@@ -93,6 +93,47 @@ ContentView()
     .appTheme(MyTheme())
 ```
 
+## Components
+
+### Buttons
+
+```swift
+Button("Submit") { }
+    .buttonStyle(.appPrimary())
+
+AppButton("Delete", style: .destructive) { }
+```
+
+### Cards
+
+```swift
+AppCard {
+    Text("Content")
+}
+```
+
+### Loading
+
+```swift
+AppLoadingView(message: "Loading data")
+AppProgressView(title: "Sync", value: 0.6)
+SkeletonView(height: 16, width: 180)
+```
+
+### Empty State
+
+```swift
+EmptyStateView(configuration: EmptyStatePreset.noResults.configuration)
+```
+
+### Error State
+
+```swift
+ErrorStateView(message: "Unable to refresh data") {
+    // retry
+}
+```
+
 ## Structure
 
 ```
