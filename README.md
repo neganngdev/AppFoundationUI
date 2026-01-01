@@ -180,6 +180,19 @@ struct OnlySwift: ValidationRule {
 let customResult = validator.validate("swift rocks", using: .custom(OnlySwift()))
 ```
 
+### Onboarding
+
+```swift
+let pages = [
+    OnboardingPage(icon: "star.fill", title: "Welcome", description: "Get started with our app"),
+    OnboardingPage(icon: "bell.fill", title: "Stay Updated", description: "Never miss important updates")
+]
+
+OnboardingContainerView(pages: pages) {
+    // completed or skipped
+}
+```
+
 ## Structure
 
 ```
