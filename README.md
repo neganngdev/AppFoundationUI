@@ -259,6 +259,14 @@ ScrollView { ... }
     }
 ```
 
+### Demo App
+
+Use `DemoAppView()` in previews or a host app to browse all components:
+
+```swift
+DemoAppView()
+```
+
 ## Structure
 
 ```
