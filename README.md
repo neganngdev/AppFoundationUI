@@ -219,6 +219,20 @@ PaywallTemplateVertical(plans: plans,
                         onDismiss: {})
 ```
 
+### Permissions
+
+```swift
+NotificationPermissionView(onAllow: {
+    // request notifications
+}, onDeny: {
+    // user declined
+})
+
+PermissionCoordinator(permissions: [.notifications, .tracking]) {
+    // all handled
+}
+```
+
 ## Structure
 
 ```
