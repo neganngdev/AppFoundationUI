@@ -233,6 +233,32 @@ PermissionCoordinator(permissions: [.notifications, .tracking]) {
 }
 ```
 
+### Utilities
+
+```swift
+// Toast
+let toastManager = ToastManager()
+Text("Content")
+    .toast(manager: toastManager)
+// trigger: toastManager.show(Toast(message: "Saved", type: .success))
+
+// Bottom sheet
+Text("Tap").bottomSheet(isPresented: $showSheet) {
+    ModalWrapper(title: "Sheet", onClose: { showSheet = false }) {
+        Text("Sheet content")
+    }
+}
+
+// Rating
+await RatingManager.shared.requestReviewIfAppropriate(in: scene)
+
+// Pull to refresh
+ScrollView { ... }
+    .pullToRefresh {
+        await viewModel.reload()
+    }
+```
+
 ## Structure
 
 ```
